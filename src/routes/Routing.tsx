@@ -13,15 +13,18 @@ import {
 } from '@/pages'
 
 import { RoutesPath } from '@/enums'
+import { config } from '@/config'
+
 const Routing = () => {
+  const base = config.env.baseUrl
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path={RoutesPath.PublicHome} element={<DefaultLayout><Home /></DefaultLayout>} />
+      <Route path={`${base}${RoutesPath.PublicHome}`} element={<DefaultLayout><Home /></DefaultLayout>} />
 
       {/* Dashboard Routes */}
-      <Route path={RoutesPath.DashboardHome} element={<DashboardLayout><DashboardMain /></DashboardLayout>} />
-      <Route path={RoutesPath.DashboardSecondPage} element={<DashboardLayout><SecondPage /></DashboardLayout>} />
+      <Route path={`${base}${RoutesPath.DashboardHome}`} element={<DashboardLayout><DashboardMain /></DashboardLayout>} />
+      <Route path={`${base}${RoutesPath.DashboardSecondPage}`} element={<DashboardLayout><SecondPage /></DashboardLayout>} />
 
       {/* 404 */}
       <Route path="*" element={<DefaultLayout><NotFound /></DefaultLayout>} />
