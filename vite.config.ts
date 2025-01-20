@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), viteTsconfigPaths()],
     server: {
       open: true, // Open the browser when the dev server starts
-      port: 3000,
+      port: Number(env.VITE_PORT) || 3000,
     },
     // test: {
     //   globals: true,
