@@ -9,7 +9,7 @@ import {
 } from '@/layout'
 import type { ComponentType } from 'react'
 import {
-  Home, DashboardMain, SecondPage, NotFound,
+  Home, NotFound, ClientMain, ClientPageTwo, MemberShipMain, MemberShipPageTwo,
 } from '@/pages'
 
 import { RoutesPath } from '@/enums'
@@ -27,9 +27,9 @@ const Routing = () => {
       {/* Public Routes */}
       <Route path={`${base}${RoutesPath.PublicHome}`} element={Default(Home)} />
 
-      {/* Dashboard Routes */}
-      <Route path={`${base}${RoutesPath.DashboardHome}`} element={Dashboard(DashboardMain)} />
-      <Route path={`${base}${RoutesPath.DashboardSecondPage}`} element={Dashboard(SecondPage)} />
+      {/* Client Routes */}
+      <Route path={`${base}${RoutesPath.ClientHome}`} element={Dashboard(ClientMain)} />
+      <Route path={`${base}${RoutesPath.ClientSecondPage}`} element={Dashboard(ClientPageTwo)} />
 
       {/* 404 */}
       <Route path="*" element={Default(NotFound)} />
