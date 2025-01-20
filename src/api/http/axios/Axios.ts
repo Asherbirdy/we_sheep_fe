@@ -79,8 +79,7 @@ class Axios {
     this.axiosInstance.interceptors.request.use(
       async (config: InternalAxiosRequestConfig) => {
         const abortRepetitiveRequest =
-          (config as unknown as any)?.abortRepetitiveRequest ??
-          this.options.abortRepetitiveRequest
+          (config as any)?.abortRepetitiveRequest
 
         let token = getToken('accessToken')
 

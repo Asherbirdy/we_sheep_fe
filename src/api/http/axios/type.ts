@@ -10,11 +10,11 @@ import type {
 export interface AxiosOptions extends AxiosRequestConfig {
   directlyGetData?: boolean // 是否直接返回 data 數據
   interceptors?: RequstInterceptors // 定義攔截器
-  abortRepetitiveRequest?: boolean // 是否取消重複請求
-  retryConfig?: {
-    count: number // 重連次數
-    waitTime: number // 每次請求間隔時間
-  }
+  // abortRepetitiveRequest?: boolean // 是否取消重複請求
+  // retryConfig?: {
+  //   count: number // 重連次數
+  //   waitTime: number // 每次請求間隔時間
+  // }
 }
 
 // ** 定義攔截器，後續在 index.ts 中繼承實現
