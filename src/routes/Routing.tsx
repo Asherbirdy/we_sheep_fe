@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-max-props-per-line */
-/* eslint-disable max-len */
 import {
   Routes, Route,
 } from 'react-router-dom'
@@ -17,7 +16,6 @@ import { config } from '@/config'
 
 const Routing = () => {
   const base = config.env.baseUrl
-
   // Layout
   const Default = (Component: ComponentType) => <DefaultLayout><Component /></DefaultLayout>
   const Dashboard = (Component: ComponentType) => <DashboardLayout><Component /></DashboardLayout>

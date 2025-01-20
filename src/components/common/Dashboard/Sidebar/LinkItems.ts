@@ -14,11 +14,11 @@ export const LinkItems: Array<LinkItemProps> = [
   {
     name: 'Home',
     icon: FiHome,
-    route: RoutesPath.DashboardHome,
+    route: RoutesPath.ClientHome,
   },
   {
     name: 'Second Page',
     icon: FiTrendingUp,
-    route: RoutesPath.DashboardSecondPage,
+    route: RoutesPath.ClientSecondPage,
   },
 ]

@@ -5,7 +5,7 @@ import {
   Text, Button, Box, Tooltip, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter,
 } from '@chakra-ui/react'
 
-const Home: FunctionComponent = (): ReactElement => {
+export const Home: FunctionComponent = (): ReactElement => {
   const {
     isOpen, onOpen, onClose,
   } = useDisclosure()
@@ -49,4 +49,3 @@ const Home: FunctionComponent = (): ReactElement => {
   )
 }
 
-export { Home }

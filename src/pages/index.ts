@@ -1,5 +1,5 @@
 // Public Routes
-export * from './home/Home'
+export * from './Home'
 export * from './NotFound'
 
 // Client Routes
