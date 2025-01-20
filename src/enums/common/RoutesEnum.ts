@@ -1,5 +1,5 @@
-const client = 'C'
-const memberShip = 'M'
+const client = '/C'
+const memberShip = '/M'
 
 export enum RoutesPath {
   // Public Routes

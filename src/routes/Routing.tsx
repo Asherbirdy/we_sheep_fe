@@ -31,6 +31,10 @@ const Routing = () => {
       <Route path={`${base}${RoutesPath.ClientHome}`} element={Dashboard(ClientMain)} />
       <Route path={`${base}${RoutesPath.ClientSecondPage}`} element={Dashboard(ClientPageTwo)} />
 
+      {/* MemberShip Routes */}
+      <Route path={`${base}${RoutesPath.MemberShipHome}`} element={Dashboard(MemberShipMain)} />
+      <Route path={`${base}${RoutesPath.MemberShipSecondPage}`} element={Dashboard(MemberShipPageTwo)} />
+
       {/* 404 */}
       <Route path="*" element={Default(NotFound)} />
     </Routes>
