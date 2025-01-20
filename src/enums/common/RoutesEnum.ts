@@ -1,8 +1,15 @@
+const client = '/C'
+const memberShip = '/M'
+
 export enum RoutesPath {
   // Public Routes
   PublicHome = '/',
 
-  // Dashboard Routes
-  DashboardHome = '/dashboard/',
-  DashboardSecondPage = '/dashboard/pageTwo',
+  // Client Routes
+  ClientHome = `${client}/`,
+  ClientSecondPage = `${client}/pageTwo`,
+
+  // MemberShip Routes
+  MemberShipHome = `${memberShip}/`,
+  MemberShipSecondPage = `${memberShip}/pageTwo`,
 }

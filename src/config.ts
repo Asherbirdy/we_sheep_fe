@@ -1,14 +1,16 @@
 interface Config {
   env: {
-    mode: 'development' | 'production'
+    baseUrl: string
     apiUrl: string
+    port: string
   }
 }
 
 export const config: Config = {
   env: {
-    mode: import.meta.env.MODE as 'development' | 'production',
+    baseUrl: import.meta.env.VITE_BASE_URL,
     apiUrl: import.meta.env.VITE_API_URL,
+    port: import.meta.env.VITE_PORT,
   },
 }
 
