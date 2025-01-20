@@ -7,7 +7,7 @@ import {
 import {
   DefaultLayout, DashboardLayout,
 } from '@/layout'
-
+import type { ComponentType } from 'react'
 import {
   Home, DashboardMain, SecondPage, NotFound,
 } from '@/pages'
@@ -17,17 +17,22 @@ import { config } from '@/config'
 
 const Routing = () => {
   const base = config.env.baseUrl
+
+  // Layout
+  const Default = (Component: ComponentType) => <DefaultLayout><Component /></DefaultLayout>
+  const Dashboard = (Component: ComponentType) => <DashboardLayout><Component /></DashboardLayout>
+
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path={`${base}${RoutesPath.PublicHome}`} element={<DefaultLayout><Home /></DefaultLayout>} />
+      <Route path={`${base}${RoutesPath.PublicHome}`} element={Default(Home)} />
 
       {/* Dashboard Routes */}
-      <Route path={`${base}${RoutesPath.DashboardHome}`} element={<DashboardLayout><DashboardMain /></DashboardLayout>} />
-      <Route path={`${base}${RoutesPath.DashboardSecondPage}`} element={<DashboardLayout><SecondPage /></DashboardLayout>} />
+      <Route path={`${base}${RoutesPath.DashboardHome}`} element={Dashboard(DashboardMain)} />
+      <Route path={`${base}${RoutesPath.DashboardSecondPage}`} element={Dashboard(SecondPage)} />
 
       {/* 404 */}
-      <Route path="*" element={<DefaultLayout><NotFound /></DefaultLayout>} />
+      <Route path="*" element={Default(NotFound)} />
     </Routes>
   )
 }
