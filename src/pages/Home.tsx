@@ -4,11 +4,20 @@ import {
 import {
   Text, Button, Box, Tooltip, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter,
 } from '@chakra-ui/react'
+import { useDevApi } from '@/api/useDevApi'
+import { useQuery } from '@tanstack/react-query'
 
 export const Home: FunctionComponent = (): ReactElement => {
   const {
     isOpen, onOpen, onClose,
   } = useDisclosure()
+
+  const {
+    data, isLoading, error,
+  } = useQuery({
+    queryKey: ['dev'],
+    queryFn: () => useDevApi.checkIp(),
+  })
   return (
     <Box>
       <Tooltip
@@ -28,6 +37,7 @@ export const Home: FunctionComponent = (): ReactElement => {
           <ModalCloseButton />
           <ModalBody>
             <Text>
+              {data?.ip}
               Here&apos;s a Chakra UI modal. You can close it by
               clicking &quot;Close&quot;
             </Text>
